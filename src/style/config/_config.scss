@@ -1,23 +1,19 @@
 // Color Palette
 
-$primary-background-color: #f7f7f7;
-
+$primary-background-color: #fff;
 $secondary-background-color: #f1f2f3;
-$secondary-background-color-darker: #6e6f70;
-$secondary-background-color-lite: #e4e5e6;
+$secondary-background-color-lite: #d8d8d8;
+$secondary-background-color-darker: #878787;
 
 $sauce-image-border: #c7c8c9;
 
 $primary-text-color: #000;
 $secondary-text-color: #6e6f70;
-// $secondary-text-color-lite: #515151;
 $title-text-color: #a70710;
 
 $primary-positive-cta-color: #1da362;
 $secondary-positive-cta-color: #3e85ca;
 $negative-cta-color: #ca3b33;
-$undo-cta-color: #9b3eca;
-$hover-cta-color: rgb(187, 0, 150);
 
 // Dynamically Set Color (if needed)
 @function set-text-color($color) {
@@ -29,8 +25,8 @@ $hover-cta-color: rgb(187, 0, 150);
 }
 // ============ End of Color Palette
 
-// Font Palette (placholder change)
-$heading-font: Arial, Helvetica, sans-serif;
+// Font Palette
+$heading-font: 'Avenir', sans-serif;
 $sub-heading-font: Helvetica;
 $body-font: Times;
 // ============ End of Font Palette

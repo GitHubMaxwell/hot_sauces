@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import HomeParent from './HomeParent';
-import DetailsParent from './DetailsParent';
-import AddSauceParent from './AddSauceParent';
+import HomeParent from './HomePage/HomeParent';
+import DetailsParent from './SauceDetailsPage/DetailsParent';
+import AddSauceParent from './AddSaucePage/AddSauceParent';
 import createAppStore from '../store/store';
 
 const store = createAppStore();

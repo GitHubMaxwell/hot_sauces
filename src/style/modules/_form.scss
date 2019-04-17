@@ -4,6 +4,9 @@
   justify-content: center;
   .preview {
     position: relative;
+    .successMsg {
+      color: $primary-positive-cta-color;
+    }
   }
   .form {
     background-color: $secondary-background-color-lite;

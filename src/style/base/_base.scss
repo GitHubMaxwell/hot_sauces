@@ -10,9 +10,8 @@ img {
 }
 
 body {
-  // background: $primary-background-color;
-  background-color: #fff;
-  font-family: 'Avenir', sans-serif;
+  background-color: $primary-background-color;
+  font-family: $heading-font;
   line-height: 1.5;
 }
 

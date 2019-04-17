@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function HomeGridItem(props) {
+export default function HomeChild(props) {
   return (
     <li className="grid-item">
       <i

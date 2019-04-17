@@ -3,6 +3,8 @@ const LOAD_SAUCES = 'LOAD_SAUCES';
 const DELETE_SAUCE = 'DELETE_SAUCE';
 const SAUCE_DETAILS = 'SAUCE_DETAILS';
 const ADD_SAUCE = 'ADD_SAUCE';
+const SUCCESS_ON = 'SUCCESS_ON';
+const SUCCESS_OFF = 'SUCCESS_OFF';
 
 // Action Creators
 export const loadSauces = payload => {
@@ -22,16 +24,27 @@ export const sauceDetails = payload => {
     return dispatch({ type: SAUCE_DETAILS, payload });
   };
 };
+
 export const addSauce = payload => {
   return dispatch => {
     return dispatch({ type: ADD_SAUCE, payload });
   };
 };
 
+export const successOn = () => {
+  return dispatch => {
+    setTimeout(() => {
+      return dispatch({ type: SUCCESS_OFF });
+    }, 6000);
+    return dispatch({ type: SUCCESS_ON });
+  };
+};
+
 // Initial State
 let initialState = {
   list: [],
-  selected: {}
+  selected: {},
+  success: false
 };
 
 // Reducer
@@ -62,6 +75,12 @@ export default (state = initialState, action) => {
     case 'ADD_SAUCE':
       state.list.push(payload);
       return { ...state, ...(state.list = [...state.list]) };
+
+    case 'SUCCESS_ON':
+      return { ...state, ...(state.success = true) };
+
+    case 'SUCCESS_OFF':
+      return { ...state, ...(state.success = false) };
 
     default:
       return state;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sauceDetails } from '../reducer/reducer';
+import { sauceDetails } from '../../reducer/reducer';
 import { Redirect } from 'react-router-dom';
 import DetailsChild from './DetailsChild';
 

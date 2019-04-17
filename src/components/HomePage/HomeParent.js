@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { loadSauces, deleteSauce } from '../reducer/reducer';
+import { loadSauces, deleteSauce } from '../../reducer/reducer';
 import { connect } from 'react-redux';
-import HomeGridItem from './HomeChild';
-import Menu from './Menu';
-
-import data from '../data/hotsauces.json';
+import HomeChild from './HomeChild';
+import Menu from '../Menu';
+import data from '../../data/hotsauces.json';
 
 class HomeParent extends Component {
   componentDidMount() {
@@ -30,7 +29,7 @@ class HomeParent extends Component {
           <h1>Hot Sauce List</h1>
           <ul className="grid container">
             {this.props.list.map(ele => {
-              return <HomeGridItem key={ele.id} data={ele} {...props} />;
+              return <HomeChild key={ele.id} data={ele} {...props} />;
             })}
           </ul>
         </div>

@@ -1,27 +1,30 @@
 import React, { Fragment, Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addSauce } from '../reducer/reducer';
-import HomeChild from './HomeChild';
+import { addSauce, successOn } from '../../reducer/reducer';
+import HomeChild from '../HomePage/HomeChild';
 import AddSauceForm from './AddSauceForm';
-import Menu from './Menu';
+import Menu from '../Menu';
 
 class AddSauceParent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 100,
-      title: 'title',
-      subtitle: 'subtitle',
-      imageURL: 'https://picsum.photos/200/200',
-      description: 'description'
+      details: {
+        id: 100,
+        title: 'title',
+        subtitle: 'subtitle',
+        imageURL: 'https://picsum.photos/200/200',
+        description: 'description'
+      }
     };
   }
   onChange = e => {
     let key = e.target.id;
     let value = event.target.value;
+    let obj = { [key]: value };
     this.setState({
-      [key]: value
+      details: { ...this.state.details, ...obj }
     });
   };
 
@@ -33,9 +36,13 @@ class AddSauceParent extends Component {
       {
         id
       },
-      () => this.props.addSauce(this.state)
+      () => this.props.addSauce(this.state.details)
     );
-    document.getElementsByClassName('sauce-input').value = '';
+    document.getElementById('title').value = '';
+    document.getElementById('subtitle').value = '';
+    document.getElementById('imageURL').value = '';
+    document.getElementById('description').value = '';
+    this.props.successOn();
   };
 
   render() {
@@ -53,7 +60,10 @@ class AddSauceParent extends Component {
           <div className="form-container container">
             <AddSauceForm {...props} />
             <ul className="preview">
-              <HomeChild data={this.state} />
+              {this.props.success ? (
+                <p className="successMsg">Success! Go "Home" to see your addition</p>
+              ) : null}
+              <HomeChild data={this.state.details} />
             </ul>
           </div>
         </Fragment>
@@ -63,11 +73,13 @@ class AddSauceParent extends Component {
 }
 
 const mapStateToProps = state => ({
-  list: state.list
+  list: state.list,
+  success: state.success
 });
 
 const mapDispatchToProps = dispatch => ({
-  addSauce: payload => dispatch(addSauce(payload))
+  addSauce: payload => dispatch(addSauce(payload)),
+  successOn: () => dispatch(successOn())
 });
 
 export default connect(

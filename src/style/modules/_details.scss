@@ -11,13 +11,13 @@
       color: $title-text-color;
     }
     h1 {
-      font-size: 4em;
+      font-size: 3em;
       color: $secondary-text-color;
     }
   }
   .details-img-container {
     height: 70vh;
-    background-color: #dddedf;
+    background-color: $secondary-background-color-lite;
     .details-img {
       width: 100%;
       object-fit: contain;
@@ -35,10 +35,13 @@
     flex-direction: row;
     min-width: 800px;
   }
-  .right {
-    width: 300px;
-  }
   .left {
     width: calc(100% - 300px);
+    h1 {
+      font-size: 4em;
+    }
+  }
+  .right {
+    width: 300px;
   }
 }

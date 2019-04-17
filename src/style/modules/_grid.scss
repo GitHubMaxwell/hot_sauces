@@ -28,6 +28,11 @@ h1 {
       margin: 0 auto;
     }
   }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    box-shadow: 1px 1px 1em 1px lightgray;
+  }
 }
 .grid-item-text-container {
   padding: 10px;
@@ -40,8 +45,6 @@ h1 {
   top: 5px;
   visibility: visible;
 }
-
-///////////////////////////////////////////////
 
 @include mediaMd {
   .home {
@@ -61,9 +64,10 @@ h1 {
     position: relative;
     margin-bottom: 10px;
     max-width: 230px;
+    transition: box-shadow 200ms ease-in-out;
+
     &:hover,
     &:focus {
-      cursor: pointer;
       .grid-item-delete {
         visibility: visible;
       }

@@ -2,29 +2,12 @@ nav {
   padding: 20px 40px;
   background-color: $secondary-background-color-darker;
   justify-content: center;
-  & * {
+  a {
+    @extend %transition-text-color;
     color: set-text-color($primary-text-color);
   }
-  h1 {
-    display: none;
-  }
-  .right {
-    justify-content: center;
-    flex-wrap: nowrap;
-    li {
-      height: 100%;
-      flex-direction: column;
-      align-items: center;
-      margin-right: 30px;
-      &:hover a,
-      &:focus a,
-      &:hover i,
-      &:focus i {
-        color: $hover-cta-color;
-      }
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
+  a:hover,
+  a:focus {
+    color: $primary-text-color;
   }
 }
