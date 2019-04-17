@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { loadSauces, deleteSauce } from '../../reducer/reducer';
+import { loadSauces, deleteSauce, updateSauce } from '../../reducer/reducer';
 import { connect } from 'react-redux';
 import HomeChild from './HomeChild';
 import Menu from '../Menu';
@@ -16,10 +16,15 @@ class HomeParent extends Component {
     this.props.deleteSauce(e.target.id);
   };
 
+  imageError = e => {
+    this.props.updateSauce({ target: e.target.id, image: 'https://picsum.photos/300/220' });
+    this.props.loadSauces(this.props.list);
+  };
+
   render() {
-    // contain props here to spread onto iterable item for clean structure and readability
     const props = {
-      deleteSauce: this.deleteSauce
+      deleteSauce: this.deleteSauce,
+      imageError: this.imageError
     };
 
     return (
@@ -44,7 +49,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loadSauces: payload => dispatch(loadSauces(payload)),
-  deleteSauce: payload => dispatch(deleteSauce(payload))
+  deleteSauce: payload => dispatch(deleteSauce(payload)),
+  updateSauce: payload => dispatch(updateSauce(payload))
 });
 
 export default connect(

@@ -5,7 +5,7 @@ export default function AddSauceForm(props) {
     <form className="form container">
       <label>Add Hot Sauce Details</label>
       <input
-        maxlength="15"
+        maxLength="15"
         className="sauce-input"
         id="title"
         type="text"
@@ -13,7 +13,7 @@ export default function AddSauceForm(props) {
         onChange={props.onChange}
       />
       <input
-        maxlength="108"
+        maxLength="108"
         className="sauce-input"
         id="subtitle"
         type="text"

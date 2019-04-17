@@ -1,6 +1,7 @@
 // Action Constants
 const LOAD_SAUCES = 'LOAD_SAUCES';
 const DELETE_SAUCE = 'DELETE_SAUCE';
+const UPDATE_SAUCE = 'UPDATE_SAUCE';
 const SAUCE_DETAILS = 'SAUCE_DETAILS';
 const ADD_SAUCE = 'ADD_SAUCE';
 const SUCCESS_ON = 'SUCCESS_ON';
@@ -31,6 +32,14 @@ export const addSauce = payload => {
   };
 };
 
+//////////////
+export const updateSauce = payload => {
+  console.log('UPDATE SAUCE PIC: ', payload);
+  return dispatch => {
+    return dispatch({ type: UPDATE_SAUCE, payload });
+  };
+};
+//////////////
 export const successOn = () => {
   return dispatch => {
     setTimeout(() => {
@@ -55,13 +64,23 @@ export default (state = initialState, action) => {
     case 'LOAD_SAUCES':
       return { ...state, ...(state.list = [...payload]) };
 
-    case 'DELETE_SAUCE':
-      state.list.forEach((ele, i) => {
-        if (ele.id == payload) {
-          state.list.splice(i, 1);
+    case 'UPDATE_SAUCE':
+      let oldState = state.list;
+      oldState.forEach(ele => {
+        if (ele.id == payload.target) {
+          ele.imageURL = payload.image;
         }
       });
-      return { ...state, ...(state.list = [...state.list]) };
+      return { ...state, ...(state.list = oldState) };
+
+    case 'DELETE_SAUCE':
+      let newList = state.list;
+      newList.forEach((ele, i) => {
+        if (ele.id == payload) {
+          newList.splice(i, 1);
+        }
+      });
+      return { ...state, ...(state.list = [...newList]) };
 
     case 'SAUCE_DETAILS':
       let selectedSauce = {};
@@ -73,8 +92,9 @@ export default (state = initialState, action) => {
       return { ...state, ...(state.selected = selectedSauce) };
 
     case 'ADD_SAUCE':
-      state.list.push(payload);
-      return { ...state, ...(state.list = [...state.list]) };
+      let addedList = state.list;
+      addedList.push(payload);
+      return { ...state, ...(state.list = [...addedList]) };
 
     case 'SUCCESS_ON':
       return { ...state, ...(state.success = true) };

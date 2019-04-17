@@ -7,9 +7,11 @@ export default function HomeChild(props) {
       <li className="grid-item">
         <div className="grid-item-img-container">
           <img
+            id={props.data.id}
             className="grid-item-img"
             src={props.data.imageURL}
             alt={`Picture of ${props.data.title}`}
+            onError={props.imageError}
           />
         </div>
         <div className="grid-item-text-container">
@@ -29,9 +31,11 @@ export default function HomeChild(props) {
         <Link to={`details/${props.data.id}`}>
           <div className="grid-item-img-container">
             <img
+              id={props.data.id}
               className="grid-item-img"
               src={props.data.imageURL}
               alt={`Picture of ${props.data.title}`}
+              onError={props.imageError}
             />
           </div>
           <div className="grid-item-text-container">

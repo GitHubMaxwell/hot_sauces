@@ -13,7 +13,7 @@ Note: website is deployed at https://githubmaxwell.github.io/hot_sauces/#/ allow
 5. While on the Home page, you can click one of the hot suace cards/thumbnails to navigate to its respective Details page.
 6. From the Detials page you can go back to the Home page by pressing the `<back to hot sauce list` button at the top left of the page.
 7. On the Home page, while hovering over a hot sauce card an `X` will appear at the top right corner of the card. Press the `X` to delete the hot sauce card from the grid.
-8. On the Home page, to your top left is an `Add Sauce` button. Clicking this will navigate you to the Add Sauce Page and you can enter details into the provided form and see the changes rendered in real time by the provided preview hot sauce card. When ready click `Submit` and green text saying: `Success! Go "Home" to see your addition` will appear to confirm the sauce addition to the grid.
+8. On the Home page, to your top left is an `Add Sauce` button. Clicking this will navigate you to the Add Sauce Page and you can enter details into the provided form and see the changes rendered in real time by the provided preview hot sauce card (for your image you can use this `https://picsum.photos/300/220`). When ready click `Submit` and green text saying: `Success! Go "Home" to see your addition` will appear to confirm the sauce addition to the grid.
 9. From the Add Sauce page, press the `Home` button at the top left corner and scroll down on the Home page to see you addition.
 
 ## Features (Required)
@@ -43,6 +43,7 @@ Note: website is deployed at https://githubmaxwell.github.io/hot_sauces/#/ allow
 ## Problems Overcame
 
 - I had to switch to redux for state management because I needed to share state between unrelated components
+- Adding error handling to broken images whereby I added an onError handler to input a placeholder image and then needed to cause a re render with the newly updated list already in redux state and not from the JSON
 
 ## Next Steps
 
