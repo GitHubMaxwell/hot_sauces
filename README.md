@@ -9,7 +9,7 @@ Note: website is deployed at https://githubmaxwell.github.io/hot_sauces/#/ allow
 1. Fork project from github and then clone down to your local machine.
 2. Open the project in your preferred code editor.
 3. From your command line/terminal opened to the root directory of this project run `npm i` to install dependencies (Note: There is a security issue with a `Node-Sass` nested dependency that is being resolved on their end - you will see the NPM warning after the installation is complete)
-4. After dependencies are installed, run `npm run start` to spin up the project locally. You should be automatically navigated to your default browser with the project opened in the window. If not, open your browser and enter `localhost:3333` in the URL search bar.
+4. After dependencies are installed, run `npm start` to spin up the project locally. You should be automatically navigated to your default browser with the project opened in the window. If not, open your browser and enter `localhost:3333` in the URL search bar.
 5. While on the Home page, you can click one of the hot suace cards/thumbnails to navigate to its respective Details page.
 6. From the Detials page you can go back to the Home page by pressing the `<back to hot sauce list` button at the top left of the page.
 7. On the Home page, while hovering over a hot sauce card an `X` will appear at the top right corner of the card. Press the `X` to delete the hot sauce card from the grid.
