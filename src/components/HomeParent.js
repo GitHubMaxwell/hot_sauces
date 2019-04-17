@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { loadSauces, deleteSauce } from '../reducer/reducer';
 import { connect } from 'react-redux';
-import HomeGridItem from './HomeGridItem';
+import HomeGridItem from './HomeChild';
 import Menu from './Menu';
 
 import data from '../data/hotsauces.json';
 
-class HomeGrid extends Component {
+class HomeParent extends Component {
   componentDidMount() {
     if (this.props.list.length === 0) {
       this.props.loadSauces(data.list);
@@ -51,4 +51,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeGrid);
+)(HomeParent);

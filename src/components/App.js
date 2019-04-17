@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import HomeGrid from './HomeGrid';
-import Details from './Details';
-import AddSauce from './AddSauce';
+import HomeParent from './HomeParent';
+import DetailsParent from './DetailsParent';
+import AddSauceParent from './AddSauceParent';
 import createAppStore from '../store/store';
 
 const store = createAppStore();
@@ -13,9 +13,9 @@ export default function App() {
     <Provider store={store}>
       <HashRouter>
         <Fragment>
-          <Route exact path="/" component={HomeGrid} />
-          <Route path="/addsauce" component={AddSauce} />
-          <Route path="/details/:id" component={Details} />
+          <Route exact path="/" component={HomeParent} />
+          <Route path="/addsauce" component={AddSauceParent} />
+          <Route path="/details/:id" component={DetailsParent} />
         </Fragment>
       </HashRouter>
     </Provider>

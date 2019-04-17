@@ -4,7 +4,7 @@ import { sauceDetails } from '../reducer/reducer';
 import { Redirect } from 'react-router-dom';
 import DetailsChild from './DetailsChild';
 
-class Details extends Component {
+class DetailsParent extends Component {
   componentWillMount() {
     let {
       match: { params }
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Details);
+)(DetailsParent);

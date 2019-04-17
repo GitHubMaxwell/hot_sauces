@@ -27,12 +27,4 @@ nav {
       }
     }
   }
-  @include mediaTablet {
-    h1 {
-      display: block;
-    }
-    .right {
-      margin-left: auto;
-    }
-  }
 }
