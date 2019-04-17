@@ -1,0 +1,24 @@
+.details {
+  .left {
+    flex-direction: column;
+    width: calc(100% - 300px);
+    .details-text-container {
+      background-color: #e4e5e6;
+      height: 30vh;
+    }
+    .details-img-container {
+      height: 70vh;
+      .details-img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .right {
+    background-color: white;
+    font-size: 12px;
+    line-height: 1.3em;
+    padding: 10px;
+    width: 300px;
+  }
+}

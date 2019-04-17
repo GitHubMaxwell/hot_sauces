@@ -1,0 +1,42 @@
+// Color Palette
+
+// pure white
+// $primary-background-color: #fff;
+// from webkit.org
+$primary-background-color: #f7f7f7;
+// from linkedin.com (darker)
+// $primary-background-color: #F5F5F5;
+// from facebook (darker + has blue in it)
+// $primary-background-color: #EDF0F5;
+
+$secondary-background-color: #fff;
+// $secondary-background-color: #979797;
+$secondary-background-color-darker: #323234;
+$secondary-background-color-lite: #eeebe6;
+
+$primary-text-color: #000;
+$secondary-text-color: #393939;
+$secondary-text-color-lite: #515151;
+$title-text-color: #a70710;
+
+$primary-positive-cta-color: #1da362;
+$secondary-positive-cta-color: #3e85ca;
+$negative-cta-color: #ca3b33;
+$undo-cta-color: #9b3eca;
+$hover-cta-color: rgb(187, 0, 150);
+
+// Dynamically Set Color (if needed)
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+// ============ End of Color Palette
+
+// Font Palette (placholder change)
+$heading-font: Arial, Helvetica, sans-serif;
+$sub-heading-font: Helvetica;
+$body-font: Times;
+// ============ End of Font Palette

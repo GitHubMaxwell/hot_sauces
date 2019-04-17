@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: 100%;
+}
+
+body {
+  // background: $primary-background-color;
+  background-color: #fff;
+  font-family: 'Avenir', sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  color: $primary-text-color;
+}
+
+h1 {
+  margin: 0.7em 0 0.7em 1.5em;
+  color: $title-text-color;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
