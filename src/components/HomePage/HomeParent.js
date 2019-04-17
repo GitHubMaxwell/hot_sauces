@@ -7,9 +7,11 @@ import data from '../../data/hotsauces.json';
 
 class HomeParent extends Component {
   componentDidMount() {
-    if (this.props.list.length === 0) {
+    if (this.props.initialLoad) {
       this.props.loadSauces(data.list);
       this.props.initLoad();
+    } else {
+      this.props.loadSauces(this.props.list);
     }
   }
 
@@ -45,7 +47,8 @@ class HomeParent extends Component {
 }
 
 const mapStateToProps = state => ({
-  list: state.list
+  list: state.list,
+  initialLoad: state.initLoad
 });
 
 const mapDispatchToProps = dispatch => ({
