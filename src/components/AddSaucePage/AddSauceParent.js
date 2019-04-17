@@ -11,7 +11,7 @@ class AddSauceParent extends Component {
     super(props);
     this.state = {
       details: {
-        id: 100,
+        id: 111,
         title: 'title',
         subtitle: 'subtitle',
         imageURL: 'https://picsum.photos/200/200',
@@ -32,9 +32,12 @@ class AddSauceParent extends Component {
     e.preventDefault();
     // assuming list is always sorted
     let id = this.props.list[this.props.list.length - 1].id + 1;
+    let newId = {
+      id
+    };
     this.setState(
       {
-        id
+        details: { ...this.state.details, ...newId }
       },
       () => this.props.addSauce(this.state.details)
     );
@@ -63,7 +66,7 @@ class AddSauceParent extends Component {
               {this.props.success ? (
                 <p className="successMsg">Success! Go "Home" to see your addition</p>
               ) : null}
-              <HomeChild data={this.state.details} />
+              <HomeChild data={this.state.details} preview={true} />
             </ul>
           </div>
         </Fragment>

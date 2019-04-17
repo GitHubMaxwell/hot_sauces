@@ -6,6 +6,7 @@ export default function DetailsChild(props) {
     <Fragment>
       <div className="left">
         <div className="details-text-container">
+          <i className="fas fa-angle-left" />
           <Link to={'/'}>back to hot sauce list</Link>
           <h1>{props.selected.title}</h1>
         </div>
