@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { loadSauces, deleteSauce, updateSauce } from '../../reducer/reducer';
+import { loadSauces, deleteSauce, updateSauce, initLoad } from '../../reducer/reducer';
 import { connect } from 'react-redux';
 import HomeChild from './HomeChild';
 import Menu from '../Menu';
@@ -9,6 +9,7 @@ class HomeParent extends Component {
   componentDidMount() {
     if (this.props.list.length === 0) {
       this.props.loadSauces(data.list);
+      this.props.initLoad();
     }
   }
 
@@ -50,7 +51,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loadSauces: payload => dispatch(loadSauces(payload)),
   deleteSauce: payload => dispatch(deleteSauce(payload)),
-  updateSauce: payload => dispatch(updateSauce(payload))
+  updateSauce: payload => dispatch(updateSauce(payload)),
+  initLoad: () => dispatch(initLoad())
 });
 
 export default connect(

@@ -31,7 +31,12 @@ class AddSauceParent extends Component {
   onSubmit = e => {
     e.preventDefault();
     // assuming list is always sorted
-    let id = this.props.list[this.props.list.length - 1].id + 1;
+    let id;
+    if (this.props.list.length === 0) {
+      id = 0;
+    } else {
+      id = this.props.list[this.props.list.length - 1].id + 1;
+    }
     let newId = {
       id
     };
@@ -54,7 +59,7 @@ class AddSauceParent extends Component {
       onSubmit: this.onSubmit
     };
 
-    if (this.props.list.length === 0) {
+    if (this.props.initLoad) {
       return <Redirect to="/" />;
     } else {
       return (
@@ -77,7 +82,8 @@ class AddSauceParent extends Component {
 
 const mapStateToProps = state => ({
   list: state.list,
-  success: state.success
+  success: state.success,
+  initLoad: state.initLoad
 });
 
 const mapDispatchToProps = dispatch => ({

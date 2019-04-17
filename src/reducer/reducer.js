@@ -6,11 +6,17 @@ const SAUCE_DETAILS = 'SAUCE_DETAILS';
 const ADD_SAUCE = 'ADD_SAUCE';
 const SUCCESS_ON = 'SUCCESS_ON';
 const SUCCESS_OFF = 'SUCCESS_OFF';
+const INIT_LOAD = 'INIT_LOAD';
 
 // Action Creators
 export const loadSauces = payload => {
   return dispatch => {
     return dispatch({ type: LOAD_SAUCES, payload });
+  };
+};
+export const initLoad = () => {
+  return dispatch => {
+    return dispatch({ type: INIT_LOAD });
   };
 };
 
@@ -32,14 +38,12 @@ export const addSauce = payload => {
   };
 };
 
-//////////////
 export const updateSauce = payload => {
-  console.log('UPDATE SAUCE PIC: ', payload);
   return dispatch => {
     return dispatch({ type: UPDATE_SAUCE, payload });
   };
 };
-//////////////
+
 export const successOn = () => {
   return dispatch => {
     setTimeout(() => {
@@ -53,7 +57,8 @@ export const successOn = () => {
 let initialState = {
   list: [],
   selected: {},
-  success: false
+  success: false,
+  initLoad: true
 };
 
 // Reducer
@@ -63,6 +68,9 @@ export default (state = initialState, action) => {
   switch (type) {
     case 'LOAD_SAUCES':
       return { ...state, ...(state.list = [...payload]) };
+
+    case 'INIT_LOAD':
+      return { ...state, ...(state.initLoad = false) };
 
     case 'UPDATE_SAUCE':
       let oldState = state.list;

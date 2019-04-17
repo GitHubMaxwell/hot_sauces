@@ -13,7 +13,7 @@ class DetailsParent extends Component {
   }
 
   render() {
-    if (this.props.list.length === 0) {
+    if (this.props.initLoad) {
       return <Redirect to="/" />;
     } else {
       return (
@@ -27,7 +27,8 @@ class DetailsParent extends Component {
 
 const mapStateToProps = state => ({
   list: state.list,
-  selected: state.selected
+  selected: state.selected,
+  initLoad: state.initLoad
 });
 
 const mapDispatchToProps = dispatch => ({
