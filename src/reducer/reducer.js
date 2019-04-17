@@ -2,6 +2,7 @@
 const LOAD_SAUCES = 'LOAD_SAUCES';
 const DELETE_SAUCE = 'DELETE_SAUCE';
 const SAUCE_DETAILS = 'SAUCE_DETAILS';
+const ADD_SAUCE = 'ADD_SAUCE';
 
 // Action Creators
 export const loadSauces = payload => {
@@ -19,6 +20,11 @@ export const deleteSauce = payload => {
 export const sauceDetails = payload => {
   return dispatch => {
     return dispatch({ type: SAUCE_DETAILS, payload });
+  };
+};
+export const addSauce = payload => {
+  return dispatch => {
+    return dispatch({ type: ADD_SAUCE, payload });
   };
 };
 
@@ -52,6 +58,11 @@ export default (state = initialState, action) => {
         }
       });
       return { ...state, ...(state.selected = selectedSauce) };
+
+    case 'ADD_SAUCE':
+      state.list.push(payload);
+      return { ...state, ...(state.list = [...state.list]) };
+
     default:
       return state;
   }

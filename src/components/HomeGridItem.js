@@ -6,7 +6,7 @@ export default function HomeGridItem(props) {
     <li className="grid-item">
       <i
         id={props.data.id}
-        className="fas fa-times-circle grid-item-delete"
+        className="grid-item-delete fas fa-times-circle"
         onClick={props.deleteSauce}
       />
       <Link to={`details/${props.data.id}`}>

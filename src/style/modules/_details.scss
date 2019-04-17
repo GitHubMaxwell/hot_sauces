@@ -1,13 +1,24 @@
 .details {
+  min-width: 800px;
   .left {
     flex-direction: column;
     width: calc(100% - 300px);
     .details-text-container {
-      background-color: #e4e5e6;
+      background-color: $secondary-background-color-lite;
       height: 30vh;
+      padding: 1em 2em;
+      a {
+        color: $title-text-color;
+      }
+      h1 {
+        margin: 0;
+        font-size: 4em;
+        color: $secondary-text-color;
+      }
     }
     .details-img-container {
       height: 70vh;
+      background-color: #dddedf;
       .details-img {
         width: 100%;
         object-fit: contain;
@@ -15,7 +26,6 @@
     }
   }
   .right {
-    background-color: white;
     font-size: 12px;
     line-height: 1.3em;
     padding: 10px;

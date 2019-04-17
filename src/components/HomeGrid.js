@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import HomeGridItem from './HomeGridItem';
 import { loadSauces, deleteSauce } from '../reducer/reducer';
 import { connect } from 'react-redux';
+import HomeGridItem from './HomeGridItem';
+import Menu from './Menu';
 
 import data from '../data/hotsauces.json';
 
 class HomeGrid extends Component {
   componentDidMount() {
-    this.props.loadSauces(data.list);
+    if (this.props.list.length === 0) {
+      this.props.loadSauces(data.list);
+    }
   }
 
   deleteSauce = e => {
@@ -22,12 +25,15 @@ class HomeGrid extends Component {
 
     return (
       <Fragment>
-        <h1>Hot Sauce List</h1>
-        <ul className="grid container">
-          {this.props.list.map(ele => {
-            return <HomeGridItem key={ele.id} data={ele} {...props} />;
-          })}
-        </ul>
+        <Menu />
+        <div className="home">
+          <h1>Hot Sauce List</h1>
+          <ul className="grid container">
+            {this.props.list.map(ele => {
+              return <HomeGridItem key={ele.id} data={ele} {...props} />;
+            })}
+          </ul>
+        </div>
       </Fragment>
     );
   }
