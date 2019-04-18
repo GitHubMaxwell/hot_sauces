@@ -18,6 +18,7 @@ nav {
   justify-content: center;
   @extend %transition-opacity;
   opacity: 0;
+  font-size: 1em;
   &.success {
     opacity: 1;
     background-color: lightgreen;
