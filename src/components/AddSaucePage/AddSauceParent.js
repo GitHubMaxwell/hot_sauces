@@ -68,9 +68,6 @@ class AddSauceParent extends Component {
           <div className="form-container container">
             <AddSauceForm {...props} />
             <ul className="preview">
-              {this.props.success ? (
-                <p className="successMsg">Success! Go "Home" to see your addition</p>
-              ) : null}
               <HomeChild data={this.state.details} preview={true} />
             </ul>
           </div>
@@ -82,7 +79,6 @@ class AddSauceParent extends Component {
 
 const mapStateToProps = state => ({
   list: state.list,
-  success: state.success,
   initLoad: state.initLoad
 });
 

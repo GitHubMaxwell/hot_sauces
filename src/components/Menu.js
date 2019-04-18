@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Menu extends Component {
+class Menu extends Component {
   render() {
     if (this.props.form) {
       return (
@@ -11,6 +12,9 @@ export default class Menu extends Component {
               <Link to={'/'}>Home</Link>
             </ul>
           </nav>
+          <p className={`toast container ${this.props.success ? 'success' : null}`}>
+            Success! You have added your custom sauce to the grid
+          </p>
         </header>
       );
     } else {
@@ -26,3 +30,9 @@ export default class Menu extends Component {
     }
   }
 }
+
+const mapStateToProps = state => ({
+  success: state.success
+});
+
+export default connect(mapStateToProps)(Menu);
