@@ -1,0 +1,22 @@
+// Action Constants
+const LOAD_SAUCES = 'LOAD_SAUCES';
+const DELETE_SAUCE = 'DELETE_SAUCE';
+const UPDATE_SAUCE = 'UPDATE_SAUCE';
+const SAUCE_DETAILS = 'SAUCE_DETAILS';
+const ADD_SAUCE = 'ADD_SAUCE';
+const SUCCESS_ON = 'SUCCESS_ON';
+const SUCCESS_OFF = 'SUCCESS_OFF';
+const INIT_LOAD = 'INIT_LOAD';
+
+const actions = {
+  LOAD_SAUCES,
+  DELETE_SAUCE,
+  UPDATE_SAUCE,
+  SAUCE_DETAILS,
+  ADD_SAUCE,
+  SUCCESS_ON,
+  SUCCESS_OFF,
+  INIT_LOAD
+};
+
+export default actions;

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { loadSauces, deleteSauce, updateSauce, initLoad } from '../../reducer/reducer';
+import { loadSauces, deleteSauce, updateSauce, initLoad } from '../../actions/action_creators';
 import { connect } from 'react-redux';
 import HomeChild from './HomeChild';
-import Menu from '../Menu';
+import Menu from '../Menu/Menu';
 import data from '../../data/hotsauces.json';
 
 class HomeParent extends Component {

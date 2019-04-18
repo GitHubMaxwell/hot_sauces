@@ -1,10 +1,10 @@
 import React, { Fragment, Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addSauce, successOn } from '../../reducer/reducer';
+import { addSauce, successOn } from '../../actions/action_creators';
 import HomeChild from '../HomePage/HomeChild';
 import AddSauceForm from './AddSauceForm';
-import Menu from '../Menu';
+import Menu from '../Menu/Menu';
 
 class AddSauceParent extends Component {
   constructor(props) {

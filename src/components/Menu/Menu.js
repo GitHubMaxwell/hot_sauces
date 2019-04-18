@@ -13,7 +13,7 @@ class Menu extends Component {
             </ul>
           </nav>
           <p className={`toast container ${this.props.success ? 'success' : null}`}>
-            Success! You have added your custom sauce to the grid
+            Success! You have added your custom sauce to the Home page
           </p>
         </header>
       );
