@@ -1,23 +1,38 @@
 .details {
   flex-direction: column;
 }
-.left {
+.details-left {
   flex-direction: column;
   .details-text-container {
+    flex-direction: column;
+    align-items: center;
     background-color: #e4e5e6;
     height: 30vh;
     padding: 1em 2em;
     a {
       color: $title-text-color;
       text-transform: uppercase;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: $border-radius;
+      border: 2px solid $title-text-color;
+      width: 250px;
+      transition: background-color 200ms ease-in-out;
+      i {
+        color: $title-text-color;
+      }
+      &:hover {
+        background-color: $title-text-color;
+        color: white;
+        i {
+          color: white;
+        }
+      }
     }
     h2 {
-      font-size: 3em;
+      font-size: 4em;
       text-transform: capitalize;
       color: $secondary-text-color;
-    }
-    i {
-      color: $title-text-color;
     }
   }
   .details-img-container {
@@ -30,7 +45,7 @@
     }
   }
 }
-.right {
+.details-right {
   font-size: 12px;
   padding: 15px;
   p {
@@ -41,17 +56,20 @@
 @include mediaSm {
   .details {
     flex-direction: row;
-    // min-width: 800px;
   }
-  .left {
+  .details-left {
     width: calc(100% - 300px);
     .details-text-container {
+      a,
+      h2 {
+        align-self: flex-start;
+      }
       h2 {
         font-size: 4em;
       }
     }
   }
-  .right {
+  .details-right {
     width: 300px;
     p {
       font-size: 1.1em;
@@ -59,7 +77,7 @@
   }
 }
 @include mediaMd {
-  .left {
+  .details-left {
     width: calc(100% - 450px);
     .details-text-container {
       h2 {
@@ -67,7 +85,7 @@
       }
     }
   }
-  .right {
+  .details-right {
     width: 450px;
     p {
       font-size: 1.3em;

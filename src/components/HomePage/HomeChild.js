@@ -26,11 +26,13 @@ export default function HomeChild(props) {
   } else {
     return (
       <li className="grid-item">
-        <i
-          id={props.data.id}
-          className="grid-item-delete fas fa-times"
-          onClick={props.deleteSauce}
-        />
+        <div className="grid-item-delete-container flex-container">
+          <i
+            id={props.data.id}
+            className="grid-item-delete fas fa-times"
+            onClick={props.deleteSauce}
+          />
+        </div>
         <Link to={`details/${props.data.id}`}>
           <div className="overlay flex-container">
             <div className="overlay-text flex-container">

@@ -49,78 +49,31 @@ h1 {
 
 .grid-item {
   @extend %grid-card;
-
-  ///// OVERLAY
-
-  .overlay,
-  .overlay-color {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-  .overlay,
-  .overlay-text {
-    justify-content: center;
-    align-items: center;
-  }
-  .overlay-color,
-  .overlay-text {
-    opacity: 0;
-    border-radius: $border-radius;
-  }
   .overlay {
-    z-index: 1;
-    .overlay-color {
-      background-color: $pastel-red;
-      transition: opacity 180ms ease-in-out;
-    }
-    .overlay-text {
-      z-index: 2;
-      border: 2px solid white;
-      width: 100px;
-      height: 40px;
-      transition: background-color 180ms ease-in-out, color 180ms ease-in-out;
-      p {
-        font-size: 1.3em;
-        color: white;
-      }
-      &:hover {
-        background-color: white;
-        border: 2px solid transparent;
-        p {
-          color: $pastel-red;
-        }
-      }
-    }
+    display: none;
   }
-  &:hover,
-  &:focus {
-    .grid-item-delete {
-      visibility: visible;
-    }
-    .overlay-color {
-      opacity: 0.8;
-    }
-    .overlay-text {
-      opacity: 1;
-    }
-  }
-
-  ///// END OF OVERLAY
 }
 
 .grid-item-text-container {
   padding: 10px;
 }
-.grid-item-delete {
-  color: white;
-  cursor: pointer;
-  font-size: 1.2em;
+.grid-item-delete-container {
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
   position: absolute;
-  right: 9px;
-  top: 5px;
+  right: 8px;
+  top: 8px;
   visibility: visible;
   z-index: 2;
+  cursor: pointer;
+  .grid-item-delete {
+    color: black;
+    font-size: 1.2em;
+  }
 }
 
 @include mediaSm {
@@ -143,13 +96,78 @@ h1 {
     .grid-item-img-container {
       width: 200px;
     }
-    .grid-item-delete {
-      /// change color to black?
-      visibility: hidden;
+    .grid-item-delete-container {
+      transition: background-color 180ms ease-in-out;
+      .grid-item-delete {
+        color: white;
+        visibility: hidden;
+        transition: color 180ms ease-in-out;
+      }
       &:hover {
-        color: $negative-cta-color;
+        background-color: white;
+        .grid-item-delete {
+          color: $pastel-red;
+        }
       }
     }
+    ///// OVERLAY have to make visible
+
+    .overlay,
+    .overlay-color {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .overlay,
+    .overlay-text {
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay-color,
+    .overlay-text {
+      opacity: 0;
+      border-radius: $border-radius;
+    }
+    .overlay {
+      display: flex;
+      z-index: 1;
+      .overlay-color {
+        background-color: $pastel-red;
+        transition: opacity 180ms ease-in-out;
+      }
+      .overlay-text {
+        z-index: 2;
+        border: 2px solid white;
+        width: 100px;
+        height: 40px;
+        transition: background-color 180ms ease-in-out, color 180ms ease-in-out;
+        p {
+          font-size: 1.3em;
+          color: white;
+        }
+        &:hover {
+          background-color: white;
+          border: 2px solid transparent;
+          p {
+            color: $pastel-red;
+          }
+        }
+      }
+    }
+    &:hover,
+    &:focus {
+      .grid-item-delete {
+        visibility: visible;
+      }
+      .overlay-color {
+        opacity: 0.8;
+      }
+      .overlay-text {
+        opacity: 1;
+      }
+    }
+
+    ///// END OF OVERLAY
   }
 }
 
