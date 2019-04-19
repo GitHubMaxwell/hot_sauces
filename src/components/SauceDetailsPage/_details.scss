@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #e4e5e6;
-    height: 30vh;
+    min-height: 30vh;
     padding: 1em 2em;
     a {
       color: $title-text-color;
