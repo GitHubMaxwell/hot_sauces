@@ -44,3 +44,12 @@ export const successOn = () => {
     return dispatch({ type: actions.SUCCESS_ON });
   };
 };
+
+export const failedSubmit = () => {
+  return dispatch => {
+    setTimeout(() => {
+      return dispatch({ type: actions.FAILED_SUBMIT_OFF });
+    }, 4000);
+    return dispatch({ type: actions.FAILED_SUBMIT_ON });
+  };
+};

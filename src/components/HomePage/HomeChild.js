@@ -5,7 +5,7 @@ export default function HomeChild(props) {
   if (props.preview) {
     return (
       <div className="preview-box flex-container">
-        <h2 className="preview-title text-align">Preview</h2>
+        <h2 className="preview-title">Preview</h2>
         <li className="preview-card">
           <div className="grid-item-img-container">
             <img
@@ -32,6 +32,12 @@ export default function HomeChild(props) {
           onClick={props.deleteSauce}
         />
         <Link to={`details/${props.data.id}`}>
+          <div className="overlay flex-container">
+            <div className="overlay-text flex-container">
+              <p>Details</p>
+            </div>
+            <div className="overlay-color" />
+          </div>
           <div className="grid-item-img-container">
             <img
               id={props.data.id}

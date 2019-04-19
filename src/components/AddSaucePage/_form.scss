@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 .preview-title {
   margin-bottom: 10px;
@@ -57,5 +58,8 @@
     .form {
       margin-right: 10px;
     }
+  }
+  .preview-box {
+    margin-bottom: 0;
   }
 }
