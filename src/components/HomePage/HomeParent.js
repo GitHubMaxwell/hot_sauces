@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import { loadSauces, deleteSauce, updateSauce, initLoad } from '../../actions/action_creators';
+import {
+  loadSauces,
+  deleteSauce,
+  updateSauce,
+  initLoad
+} from '../../redux/actions/action_creators';
 import { connect } from 'react-redux';
 import HomeChild from './HomeChild';
 import Menu from '../Menu/Menu';
@@ -35,7 +40,7 @@ class HomeParent extends Component {
         <Menu />
         <div className="home">
           <h1>Hot Sauce List</h1>
-          <ul className="grid container">
+          <ul className="grid flex-container">
             {this.props.list.map(ele => {
               return <HomeChild key={ele.id} data={ele} {...props} />;
             })}

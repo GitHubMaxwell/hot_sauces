@@ -2,11 +2,14 @@ button {
   @extend %transition-background-text-color;
   cursor: pointer;
   height: 30px;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid $primary-positive-cta-color;
+  border-radius: $border-radius;
   min-width: 65px;
+}
+%button-transition {
   &:hover,
   &:focus {
+    border: 1px solid transparent;
     color: set-text-color($primary-text-color);
     background-color: $primary-positive-cta-color;
   }

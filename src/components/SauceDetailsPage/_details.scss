@@ -4,14 +4,16 @@
 .left {
   flex-direction: column;
   .details-text-container {
-    background-color: $secondary-background-color-lite;
+    background-color: #e4e5e6;
     height: 30vh;
     padding: 1em 2em;
     a {
       color: $title-text-color;
+      text-transform: uppercase;
     }
-    h1 {
+    h2 {
       font-size: 3em;
+      text-transform: capitalize;
       color: $secondary-text-color;
     }
     i {
@@ -29,22 +31,45 @@
 }
 .right {
   font-size: 12px;
-  line-height: 1.3em;
   padding: 15px;
+  p {
+    font-size: 1em;
+  }
 }
 
-@include mediaMd {
+@include mediaSm {
   .details {
     flex-direction: row;
-    min-width: 800px;
+    // min-width: 800px;
   }
   .left {
     width: calc(100% - 300px);
-    h1 {
-      font-size: 4em;
+    .details-text-container {
+      h2 {
+        font-size: 4em;
+      }
     }
   }
   .right {
     width: 300px;
+    p {
+      font-size: 1.1em;
+    }
+  }
+}
+@include mediaMd {
+  .left {
+    width: calc(100% - 450px);
+    .details-text-container {
+      h2 {
+        font-size: 5em;
+      }
+    }
+  }
+  .right {
+    width: 450px;
+    p {
+      font-size: 1.3em;
+    }
   }
 }

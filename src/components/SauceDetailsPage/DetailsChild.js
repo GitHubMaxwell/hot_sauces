@@ -8,7 +8,7 @@ export default function DetailsChild(props) {
         <div className="details-text-container">
           <i className="fas fa-angle-left" />
           <Link to={'/'}>back to hot sauce list</Link>
-          <h1>{props.selected.title}</h1>
+          <h2>{props.selected.title}</h2>
         </div>
         <div className="details-img-container">
           <img

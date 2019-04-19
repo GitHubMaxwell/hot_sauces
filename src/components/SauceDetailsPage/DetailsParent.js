@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sauceDetails } from '../../actions/action_creators';
+import { sauceDetails } from '../../redux/actions/action_creators';
 import { Redirect } from 'react-router-dom';
 import DetailsChild from './DetailsChild';
 
@@ -17,7 +17,7 @@ class DetailsParent extends Component {
       return <Redirect to="/" />;
     } else {
       return (
-        <div className="details container">
+        <div className="details flex-container">
           <DetailsChild selected={this.props.selected} />
         </div>
       );

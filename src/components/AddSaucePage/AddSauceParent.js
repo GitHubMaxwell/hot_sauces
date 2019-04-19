@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addSauce, successOn } from '../../actions/action_creators';
+import { addSauce, successOn } from '../../redux/actions/action_creators';
 import HomeChild from '../HomePage/HomeChild';
 import AddSauceForm from './AddSauceForm';
 import Menu from '../Menu/Menu';
@@ -12,17 +12,14 @@ class AddSauceParent extends Component {
     this.state = {
       details: {
         id: 111,
-        title: 'title',
-        subtitle: 'subtitle',
+        title: 'Title',
+        subtitle: 'Subtitle',
         imageURL: 'https://picsum.photos/200/200',
-        description: 'description'
+        description: 'Description'
       }
     };
   }
-  onChange = e => {
-    let key = e.target.id;
-    let value = event.target.value;
-    let obj = { [key]: value };
+  onChange = obj => {
     this.setState({
       details: { ...this.state.details, ...obj }
     });
@@ -37,26 +34,36 @@ class AddSauceParent extends Component {
     } else {
       id = this.props.list[this.props.list.length - 1].id + 1;
     }
-    let newId = {
-      id
-    };
     this.setState(
       {
-        details: { ...this.state.details, ...newId }
+        details: { ...this.state.details, ...{ id } }
       },
-      () => this.props.addSauce(this.state.details)
+      () => {
+        this.props.addSauce(this.state.details);
+        this.props.successOn();
+        this.formReset();
+      }
     );
-    document.getElementById('title').value = '';
-    document.getElementById('subtitle').value = '';
-    document.getElementById('imageURL').value = '';
-    document.getElementById('description').value = '';
-    this.props.successOn();
+  };
+
+  formReset = () => {
+    let details = {
+      id: 111,
+      title: 'Title',
+      subtitle: 'Subtitle',
+      imageURL: 'https://picsum.photos/200/200',
+      description: 'Description'
+    };
+    this.setState({
+      details: { ...this.state.details, ...details }
+    });
   };
 
   render() {
     const props = {
       onChange: this.onChange,
-      onSubmit: this.onSubmit
+      onSubmit: this.onSubmit,
+      data: this.state.details
     };
 
     if (this.props.initLoad) {
@@ -65,9 +72,9 @@ class AddSauceParent extends Component {
       return (
         <Fragment>
           <Menu form="true" />
-          <div className="form-container container">
+          <div className="form-wrapper flex-container">
             <AddSauceForm {...props} />
-            <ul className="preview">
+            <ul>
               <HomeChild data={this.state.details} preview={true} />
             </ul>
           </div>

@@ -40,7 +40,7 @@ export const successOn = () => {
   return dispatch => {
     setTimeout(() => {
       return dispatch({ type: actions.SUCCESS_OFF });
-    }, 6000);
+    }, 3000);
     return dispatch({ type: actions.SUCCESS_ON });
   };
 };
