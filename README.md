@@ -5,7 +5,7 @@ This is the completed Hot Sauce Challenge where you are to build a custom websit
 ## Installation and Usage
 
 Note: website is deployed at https://githubmaxwell.github.io/hot_sauces/#/ allowing you to skip steps 1 - 4 is you choose.
-Note: this project was made using Node version 11.12.0 and npm version 6.7.0
+Note: this project was made using Node version 11.12.0 and npm version 6.7.0 (May throw many warnings while installing dependencies with earlier versions of Node/NPM)
 
 1. Fork project from github and then clone down to your local machine.
 2. Open the project in your preferred code editor.

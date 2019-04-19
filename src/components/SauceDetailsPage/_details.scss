@@ -16,7 +16,7 @@
       padding: 10px 20px;
       border-radius: $border-radius;
       border: 2px solid $title-text-color;
-      width: 250px;
+      max-width: 250px;
       transition: background-color 200ms ease-in-out;
       i {
         color: $title-text-color;
@@ -63,6 +63,9 @@
       a,
       h2 {
         align-self: flex-start;
+      }
+      a {
+        font-size: 0.7em;
       }
       h2 {
         font-size: 4em;
