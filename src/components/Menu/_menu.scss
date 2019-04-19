@@ -24,6 +24,12 @@ nav {
     opacity: 1;
     max-height: 100px;
     height: 30px;
-    background-color: lightgreen;
+    background-color: $pastel-green;
+  }
+  &.failed {
+    opacity: 1;
+    max-height: 100px;
+    height: 30px;
+    background-color: $pastel-red;
   }
 }

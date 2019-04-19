@@ -6,6 +6,8 @@ const SAUCE_DETAILS = 'SAUCE_DETAILS';
 const ADD_SAUCE = 'ADD_SAUCE';
 const SUCCESS_ON = 'SUCCESS_ON';
 const SUCCESS_OFF = 'SUCCESS_OFF';
+const FAILED_SUBMIT_ON = 'FAILED_SUBMIT_ON';
+const FAILED_SUBMIT_OFF = 'FAILED_SUBMIT_OFF';
 const INIT_LOAD = 'INIT_LOAD';
 
 const actions = {
@@ -16,7 +18,9 @@ const actions = {
   ADD_SAUCE,
   SUCCESS_ON,
   SUCCESS_OFF,
-  INIT_LOAD
+  INIT_LOAD,
+  FAILED_SUBMIT_ON,
+  FAILED_SUBMIT_OFF
 };
 
 export default actions;

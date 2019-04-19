@@ -21,8 +21,9 @@
     }
   }
   .details-img-container {
-    height: 70vh;
     background-color: $secondary-background-color-lite;
+    height: 70vh;
+
     .details-img {
       width: 100%;
       object-fit: contain;

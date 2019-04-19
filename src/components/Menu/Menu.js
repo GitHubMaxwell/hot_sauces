@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import Toast from './Toast';
 class Menu extends Component {
   render() {
     if (this.props.form) {
@@ -12,9 +12,7 @@ class Menu extends Component {
               <Link to={'/'}>Home</Link>
             </ul>
           </nav>
-          <p className={`toast flex-container ${this.props.success ? 'success' : null}`}>
-            Success! You have added your custom sauce to the Home page
-          </p>
+          <Toast message={this.props.success} />
         </header>
       );
     } else {
@@ -32,7 +30,8 @@ class Menu extends Component {
 }
 
 const mapStateToProps = state => ({
-  success: state.success
+  success: state.success,
+  failedsubmit: state.failedsubmit
 });
 
 export default connect(mapStateToProps)(Menu);

@@ -4,7 +4,7 @@ import actions from '../actions/action_constants';
 let initialState = {
   list: [],
   selected: {},
-  success: false,
+  success: null,
   initLoad: true
 };
 
@@ -52,10 +52,16 @@ export default (state = initialState, action) => {
       return { ...state, ...(state.list = [...addedList]) };
 
     case actions.SUCCESS_ON:
-      return { ...state, ...(state.success = true) };
+      return { ...state, ...(state.success = 'success') };
 
     case actions.SUCCESS_OFF:
-      return { ...state, ...(state.success = false) };
+      return { ...state, ...(state.success = null) };
+
+    case actions.FAILED_SUBMIT_ON:
+      return { ...state, ...(state.success = 'failed') };
+
+    case actions.FAILED_SUBMIT_OFF:
+      return { ...state, ...(state.success = null) };
 
     default:
       return state;
