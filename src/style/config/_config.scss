@@ -23,11 +23,12 @@ $negative-cta-color: #ca3b33;
     @return #fff;
   }
 }
-// ============ End of Color Palette
 
 // Font Palette
 $heading-font: 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont,
   Helvetica, sans-serif;
 $sub-heading-font: Helvetica;
 $body-font: Times;
-// ============ End of Font Palette
+
+// Border Radius
+$border-radius: 6px;

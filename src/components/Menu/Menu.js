@@ -12,7 +12,7 @@ class Menu extends Component {
               <Link to={'/'}>Home</Link>
             </ul>
           </nav>
-          <p className={`toast container ${this.props.success ? 'success' : null}`}>
+          <p className={`toast flex-container ${this.props.success ? 'success' : null}`}>
             Success! You have added your custom sauce to the Home page
           </p>
         </header>

@@ -1,36 +1,56 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 
-export default function AddSauceForm(props) {
-  return (
-    <form className="form container">
-      <label>Add Hot Sauce Details</label>
-      <input
-        maxLength="15"
-        className="sauce-input"
-        id="title"
-        type="text"
-        placeholder="Title"
-        onChange={props.onChange}
-      />
-      <input
-        maxLength="108"
-        className="sauce-input"
-        id="subtitle"
-        type="text"
-        placeholder="Subtitle"
-        onChange={props.onChange}
-      />
-      <input
-        className="sauce-input"
-        id="imageURL"
-        type="text"
-        placeholder="Image URL"
-        onChange={props.onChange}
-      />
-      <textarea id="description" type="text" placeholder="Description" onChange={props.onChange} />
-      <button type="submit" onClick={props.onSubmit}>
-        Submit
-      </button>
-    </form>
-  );
+export default class AddSauceForm extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  formValueChange = e => {
+    let key = e.target.id;
+    let value = this.refs[key].value;
+    let formChange = { [key]: value };
+    this.props.onChange(formChange);
+  };
+
+  render() {
+    return (
+      <div className="form-container flex-container">
+        <h2>Add Hot Sauce Details</h2>
+        <form className="form flex-container" onChange={this.formValueChange}>
+          <input
+            className="sauce-input"
+            id="title"
+            maxLength="15"
+            placeholder={this.props.data.title}
+            ref="title"
+            type="text"
+          />
+          <input
+            className="sauce-input"
+            id="subtitle"
+            maxLength="108"
+            placeholder={this.props.data.subtitle}
+            ref="subtitle"
+            type="text"
+          />
+          <input
+            className="sauce-input"
+            id="imageURL"
+            placeholder="Image URL"
+            ref="imageURL"
+            type="text"
+          />
+          <textarea
+            id="description"
+            placeholder={this.props.data.description}
+            ref="description"
+            type="text"
+          />
+          <button type="submit" onClick={this.props.onSubmit}>
+            Submit
+          </button>
+        </form>
+      </div>
+    );
+  }
 }

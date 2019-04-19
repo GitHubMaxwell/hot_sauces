@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import HomeParent from './HomePage/HomeParent';
 import DetailsParent from './SauceDetailsPage/DetailsParent';
 import AddSauceParent from './AddSaucePage/AddSauceParent';
-import createAppStore from '../store/store';
+import createAppStore from '../redux/store/store';
 
 const store = createAppStore();
 
